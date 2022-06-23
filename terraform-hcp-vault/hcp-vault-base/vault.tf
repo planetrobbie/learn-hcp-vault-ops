@@ -12,5 +12,5 @@ resource "hcp_vault_cluster" "hcp_vault" {
 }
 
 output "public_endoing_url" {
-  value = hcp_vault.vault_public_endpoint_url
+  value = hcp_vault_cluster.hcp_vault.vault_public_endpoint_url
 }
