@@ -21,5 +21,4 @@ output "public_endpoint_url" {
 
 output "admin_token" {
   value = hcp_vault_cluster_admin_token.token
-  # sensitive = true
 }
