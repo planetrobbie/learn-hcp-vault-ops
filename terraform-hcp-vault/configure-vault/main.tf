@@ -7,15 +7,15 @@
 #    │       └── boundary
 #    └── test
 #------------------------------------------------------------------------------
-data "terraform_remote_state" "hcp_vault" {
-  backend = "remote"
-  config = {
-    organization = var.tfc_org
-    workspaces = {
-      name = var.tfc_workspace
-    }
-  }
-}
+#data "terraform_remote_state" "hcp_vault" {
+#  backend = "remote"
+#  config = {
+#   organization = var.tfc_org
+#    workspaces = {
+#      name = var.tfc_workspace
+#    }
+#  }
+#}
 
 provider "vault" {
   alias     = "admin"
