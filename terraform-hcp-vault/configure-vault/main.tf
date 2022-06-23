@@ -19,8 +19,6 @@ data "terraform_remote_state" "hcp_vault" {
 
 provider "vault" {
   alias     = "admin"
-  address   = data.terraform_remote_state.hcp_vault.outputs.public_endoing_url
-  token     = data.terraform_remote_state.hcp_vault.outputs.admin_token
   namespace = "admin"
 }
 
@@ -34,8 +32,6 @@ resource "vault_namespace" "education" {
 
 provider "vault" {
   alias     = "education"
-  address   = data.terraform_remote_state.hcp_vault.outputs.public_endoing_url
-  token     = data.terraform_remote_state.hcp_vault.outputs.admin_token
   namespace = "admin/education"
 }
 
@@ -50,8 +46,6 @@ resource "vault_namespace" "training" {
 
 provider "vault" {
   alias     = "training"
-  address   = data.terraform_remote_state.hcp_vault.outputs.public_endoing_url
-  token     = data.terraform_remote_state.hcp_vault.outputs.admin_token
   namespace = "admin/education/training"
 }
 
@@ -66,8 +60,6 @@ resource "vault_namespace" "boundary" {
 
 provider "vault" {
   alias     = "boundary"
-  address   = data.terraform_remote_state.hcp_vault.outputs.public_endoing_url
-  token     = data.terraform_remote_state.hcp_vault.outputs.admin_token
   namespace = "admin/education/training/boundary"
 }
 
@@ -81,7 +73,5 @@ resource "vault_namespace" "test" {
 
 provider "vault" {
   alias     = "test"
-  address   = data.terraform_remote_state.hcp_vault.outputs.public_endoing_url
-  token     = data.terraform_remote_state.hcp_vault.outputs.admin_token
   namespace = "admin/test"
 }
