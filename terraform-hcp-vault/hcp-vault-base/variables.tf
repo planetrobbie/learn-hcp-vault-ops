@@ -1,13 +1,13 @@
 variable "hvn_id" {
   description = "The ID of the HCP HVN."
   type        = string
-  default     = "learn-hcp-vault-hvn"
+  default     = "hcp-hvn-offsite"
 }
 
 variable "cluster_id" {
   description = "The ID of the HCP Vault cluster."
   type        = string
-  default     = "learn-hcp-vault"
+  default     = "hcp-vault-offsite"
 }
 
 variable "region" {
