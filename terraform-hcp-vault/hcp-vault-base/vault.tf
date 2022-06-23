@@ -10,3 +10,7 @@ resource "hcp_vault_cluster" "hcp_vault" {
   tier            = var.tier
   public_endpoint = true
 }
+
+output "public_endoing_url" {
+  value = hcp_vault.vault_public_endpoint_url
+}
