@@ -11,6 +11,15 @@ resource "hcp_vault_cluster" "hcp_vault" {
   public_endpoint = true
 }
 
+resource "hcp_vault_cluster_admin_token" "token" {
+  cluster_id = var.cluster_id
+}
+
 output "public_endoing_url" {
   value = hcp_vault_cluster.hcp_vault.vault_public_endpoint_url
+}
+
+output "admin_token" {
+  value     = hcp_vault_cluster_admin_token.token
+  sensitive = true
 }
